@@ -5,7 +5,7 @@ int  Is_palindrome(char * str1){
 	int str_length;
 	int i;
 	str_length = strlen(str1);
-
+//for loop to determine for palindrome
 	for (i = 0; i <= str_length; i++){
 		if (str1[i] == str1[str_length-1]){
 			str_length--;		
@@ -21,7 +21,7 @@ int  Is_palindrome(char * str1){
 int main(){
 
 	char str1[30];
-	printf("Enter a string for a palindrome test: ");
+	printf("Enter a string for a palindrome test: "); 
 	scanf("%s", str1);
 	int test = Is_palindrome(str1);
 	
