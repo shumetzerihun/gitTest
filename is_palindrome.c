@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-//comment added
+//function definition
 int  Is_palindrome(char * str1){
 	int str_length;
 	int i;
@@ -16,6 +16,7 @@ int  Is_palindrome(char * str1){
 	return 1;
 	
 }
+
 
 int main(){
 
