@@ -17,7 +17,7 @@ int  Is_palindrome(char * str1){
 	
 }
 
-
+//main function
 int main(){
 
 	char str1[30];
