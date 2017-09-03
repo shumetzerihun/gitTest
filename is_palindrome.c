@@ -2,6 +2,7 @@
 #include <string.h>
 //function definition
 //comment added on newBranch
+//new comment 
 int  Is_palindrome(char * str1){
 	int str_length;
 	int i;
