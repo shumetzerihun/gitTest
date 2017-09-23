@@ -1,2 +1,7 @@
+<<<<<<< HEAD
+Earth is not flat
+And the moon revolves around the earth
+=======
 Earth is not flat, nor is its moon, and nor are many other planets
 Venus is my favourite planet
+>>>>>>> 51aae6a666e4968b1b5a62a3d696b9d519285978

@@ -1,1 +1,10 @@
+<<<<<<< HEAD
 this is a test line
+=======
+<<<<<<< HEAD
+Mars is our future planet
+=======
+Mars is our future planet...this is a joke!
+I have been waiting for visitors for millenia!
+>>>>>>> 51aae6a666e4968b1b5a62a3d696b9d519285978
+>>>>>>> f9962311a30ac9eec6529088410991935e55a119
