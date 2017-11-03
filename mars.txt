@@ -1,11 +1,8 @@
-<<<<<<< HEAD
+
 this is a test line
-=======
-<<<<<<< HEAD
+
 Mars is our future planet
-=======
 Mars is our future planet...this is a joke!
 I have been waiting for visitors for millenia!
-
 
 this is last line on mars
