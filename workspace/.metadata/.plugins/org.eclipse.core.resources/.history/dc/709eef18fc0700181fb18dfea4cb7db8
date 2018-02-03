@@ -1,0 +1,17 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 1, 2018
+ *      Author: shumet
+ *    reading from custom file structure
+ */
+
+#include <iostream>
+using namespace std;
+
+int main(int argc, char **argv)
+{
+    cout << 25u - 50u<<endl;
+    cout<<25u<<endl;
+    return 0;
+}

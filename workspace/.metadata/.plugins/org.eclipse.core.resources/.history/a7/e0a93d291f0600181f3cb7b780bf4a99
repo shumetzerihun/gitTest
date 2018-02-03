@@ -1,0 +1,21 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 31, 2018
+ *      Author: shumet
+ */
+
+#include <iostream>
+#include <string>
+#include "people.h"
+#include "birthday.h"
+
+using namespace std;
+
+int main(){
+
+
+	return 0;
+}
+
+

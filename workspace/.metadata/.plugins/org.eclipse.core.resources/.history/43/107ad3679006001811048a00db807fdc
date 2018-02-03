@@ -1,0 +1,38 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 31, 2018
+ *      Author: shumet
+ */
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+class FriendClass{
+	int age;
+public:
+	FriendClass(int a):age(a){}
+	~FriendClass(){}
+friend void printAge(void);
+};
+
+
+void printAge(void){
+
+	x.age = 38;
+	cout<<x.age<<endl;
+}
+
+int main(){
+
+	FriendClass bb(87);
+	printAge();
+
+	return 0;
+}
+
+

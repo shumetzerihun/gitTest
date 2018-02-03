@@ -1,0 +1,27 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 1, 2018
+ *      Author: shumet
+ *    custom file handling
+ */
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(){
+
+	ofstream theFile("myFile.txt");
+
+	if(theFile.is_open())
+		cout<<"File is open"<<endl;
+	else
+		cout<<"File not opened"<<endl;
+
+
+
+	theFile.close();
+
+	return 0;
+}

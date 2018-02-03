@@ -1,0 +1,19 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 1, 2018
+ *      Author: shumet
+ *    reading from custom file structure
+ */
+
+#include <iostream>
+using namespace std;
+
+int main(int argc, char **argv)
+{
+
+	int i = 5, j = i++;
+	cout<<i<<endl<<j<<endl<<j;
+
+    return 0;
+}

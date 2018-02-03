@@ -1,0 +1,15 @@
+11:50:41 **** Incremental Build of configuration Debug for project excercise8 ****
+make all 
+Building file: ../src/main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: excercise8
+Invoking: GCC C++ Linker
+g++  -o "excercise8"  ./src/main.o   
+Finished building target: excercise8
+ 
+
+11:50:41 Build Finished (took 677ms)
+

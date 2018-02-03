@@ -1,0 +1,51 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Jan 31, 2018
+ *      Author: shumet
+ */
+
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+class FriendClass{
+
+private:
+	int age;
+public:
+	FriendClass(int = 0);
+	~FriendClass();
+
+friend void printAge(FriendClass a);
+
+};
+
+class FriendClass2{
+
+private:
+	int age;
+public:
+	FriendClass2(int = 0);
+	void printAge2(){
+		cout<<age<<endl;
+	}
+};
+
+void printAge(FriendClass x){
+
+	cout<<x.age;
+}
+
+int main(){
+
+	FriendClass2 aa;
+	aa.printAge2();
+
+	return 0;
+}
+
+

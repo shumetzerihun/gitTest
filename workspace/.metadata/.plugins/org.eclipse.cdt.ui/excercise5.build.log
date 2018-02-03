@@ -1,0 +1,6 @@
+23:47:32 **** Incremental Build of configuration Debug for project excercise5 ****
+make all 
+make: Nothing to be done for 'all'.
+
+23:47:32 Build Finished (took 81ms)
+

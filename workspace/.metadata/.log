@@ -1,0 +1,171 @@
+!SESSION 2018-01-30 01:49:09.292 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-01-30 01:50:49.292
+!MESSAGE Indexed 'excercises' (0 sources, 0 headers) in 0.003 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.osgi 2 1 2018-01-30 01:54:54.018
+!MESSAGE NLS unused message: CleanFilesHandler_cleanSelectedFiles in: org.eclipse.cdt.managedbuilder.internal.ui.commands.Messages
+!SESSION 2018-01-30 01:57:32.468 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.osgi 2 1 2018-01-30 01:58:26.316
+!MESSAGE NLS unused message: CleanFilesHandler_cleanSelectedFiles in: org.eclipse.cdt.managedbuilder.internal.ui.commands.Messages
+
+!ENTRY org.eclipse.cdt.debug.core 4 105 2018-01-30 02:32:03.972
+!MESSAGE A program file was not specified in the launch configuration.
+
+!ENTRY org.eclipse.cdt.debug.core 4 105 2018-01-30 02:32:12.469
+!MESSAGE A program file was not specified in the launch configuration.
+!SESSION 2018-01-30 19:21:39.404 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-01-31 01:12:00.614
+!MESSAGE Indexed 'excercise1' (2 sources, 149 headers) in 7.05 sec: 12,852 declarations; 20,893 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.065%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-01-31 01:12:42.005
+!MESSAGE Indexed 'excercise2' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.debug.core 4 104 2018-01-31 02:33:03.121
+!MESSAGE The program file specified in the launch configuration does not exist
+!STACK 0
+java.io.FileNotFoundException: /home/shumet/workspace/excercise2/Debug/excercises not found
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(CDebugUtils.java:691)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(CDebugUtils.java:707)
+	at org.eclipse.cdt.launch.internal.LocalCDILaunchDelegate.runLocalApplication(LocalCDILaunchDelegate.java:85)
+	at org.eclipse.cdt.launch.internal.LocalCDILaunchDelegate.launch(LocalCDILaunchDelegate.java:71)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2018-01-31 09:52:20.907 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-01-31 10:40:28.545
+!MESSAGE Indexed 'excercise3' (0 sources, 0 headers) in 0.003 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.osgi 2 1 2018-01-31 11:02:22.729
+!MESSAGE NLS unused message: CleanFilesHandler_cleanSelectedFiles in: org.eclipse.cdt.managedbuilder.internal.ui.commands.Messages
+
+!ENTRY org.eclipse.cdt.debug.core 4 104 2018-01-31 11:24:11.675
+!MESSAGE The program file specified in the launch configuration does not exist
+!STACK 0
+java.io.FileNotFoundException: /home/shumet/workspace/excercise3/Debug/excercise2 not found
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(CDebugUtils.java:691)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(CDebugUtils.java:707)
+	at org.eclipse.cdt.launch.internal.LocalCDILaunchDelegate.runLocalApplication(LocalCDILaunchDelegate.java:85)
+	at org.eclipse.cdt.launch.internal.LocalCDILaunchDelegate.launch(LocalCDILaunchDelegate.java:71)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-01-31 22:08:53.639
+!MESSAGE Indexed 'excercise4' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-01-31 23:07:17.616
+!MESSAGE Indexed 'excercise5' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 00:00:55.036
+!MESSAGE Indexed 'excercise6' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+!SESSION 2018-02-01 10:18:22.077 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.osgi 2 1 2018-02-01 10:31:54.257
+!MESSAGE NLS unused message: CleanFilesHandler_cleanSelectedFiles in: org.eclipse.cdt.managedbuilder.internal.ui.commands.Messages
+
+!ENTRY org.eclipse.cdt.debug.core 4 104 2018-02-01 10:51:16.688
+!MESSAGE The program file specified in the launch configuration does not exist
+!STACK 0
+java.io.FileNotFoundException: /home/shumet/workspace/excercise6/Debug/excercise5 not found
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(CDebugUtils.java:691)
+	at org.eclipse.cdt.debug.core.CDebugUtils.verifyProgramPath(CDebugUtils.java:707)
+	at org.eclipse.cdt.launch.internal.LocalCDILaunchDelegate.runLocalApplication(LocalCDILaunchDelegate.java:85)
+	at org.eclipse.cdt.launch.internal.LocalCDILaunchDelegate.launch(LocalCDILaunchDelegate.java:71)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1047)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1251)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 10:56:07.979
+!MESSAGE Indexed 'excercise7' (1 sources, 148 headers) in 7.8 sec: 12,742 declarations; 20,783 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.066%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 11:05:34.678
+!MESSAGE Indexed 'excercise8' (1 sources, 148 headers) in 4.98 sec: 12,741 declarations; 20,797 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.066%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 11:48:13.277
+!MESSAGE Indexed 'excercise9' (1 sources, 148 headers) in 3.84 sec: 12,751 declarations; 20,804 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.066%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 12:00:14.056
+!MESSAGE Indexed 'excercise10' (1 sources, 148 headers) in 3.11 sec: 12,750 declarations; 20,800 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.066%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 12:01:00.141
+!MESSAGE Indexed 'excercise-10' (1 sources, 148 headers) in 2.83 sec: 12,750 declarations; 20,800 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.066%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 12:02:14.302
+!MESSAGE Indexed 'templetes' (1 sources, 148 headers) in 2.75 sec: 12,750 declarations; 20,800 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.066%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 12:02:24.801
+!MESSAGE Indexed 'Excercise10' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 12:02:44.843
+!MESSAGE Indexed 'excercise9-1' (1 sources, 148 headers) in 2.43 sec: 12,750 declarations; 20,800 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.066%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 15:05:52.230
+!MESSAGE Indexed 'excercise9-2' (1 sources, 148 headers) in 2.57 sec: 12,746 declarations; 20,798 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.066%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 15:44:53.287
+!MESSAGE Indexed 'excercise9-3' (1 sources, 148 headers) in 2.56 sec: 12,745 declarations; 20,796 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.066%)
+!SESSION 2018-02-01 20:50:15.672 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 20:54:09.072
+!MESSAGE Indexed 'excercise9-4' (1 sources, 148 headers) in 10.4 sec: 12,744 declarations; 20,797 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.066%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 21:22:36.626
+!MESSAGE Indexed 'excercise9-5' (1 sources, 148 headers) in 4.98 sec: 12,739 declarations; 20,808 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.066%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 22:27:13.274
+!MESSAGE Indexed 'excercise9-6' (1 sources, 155 headers) in 3.48 sec: 13,506 declarations; 22,909 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.06%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 22:48:10.257
+!MESSAGE Indexed 'excercise9-7' (1 sources, 155 headers) in 3.84 sec: 13,508 declarations; 22,927 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.06%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-01 23:24:59.552
+!MESSAGE Indexed 'excercise9-8' (1 sources, 155 headers) in 3.97 sec: 13,508 declarations; 22,909 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.06%)
+!SESSION 2018-02-02 10:09:28.636 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-02-02 10:10:16.340
+!MESSAGE Indexed 'excercise9-9' (1 sources, 155 headers) in 9.5 sec: 13,506 declarations; 22,899 references; 0 unresolved inclusions; 4 syntax errors; 22 unresolved names (0.06%)

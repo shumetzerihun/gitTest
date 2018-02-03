@@ -1,0 +1,22 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 1, 2018
+ *      Author: shumet
+ *     file handling
+ */
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(){
+
+	ofstream shumetsFile;
+	shumetsFile.open("tuna.txt");
+
+	shumetsFile<<"I love tuna and tuna loves me \n";
+
+
+	return 0;
+}

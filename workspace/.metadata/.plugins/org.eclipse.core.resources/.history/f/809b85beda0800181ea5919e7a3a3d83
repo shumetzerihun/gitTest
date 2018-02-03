@@ -1,0 +1,36 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 1, 2018
+ *      Author: shumet
+ *    reading from custom file structure
+ */
+
+#include <iostream>
+using namespace std;
+
+class BaseClass {
+public:
+	virtual void display (){
+		cout <<"this is base class"<<endl;
+	}
+};
+
+class ChildClass: BaseClass {
+
+public:
+	void display(){
+		cout<<"This is derived class"<<endl;
+	}
+};
+
+int main(int argc, char **argv)
+{
+	BaseClass a;
+	a.display();
+	ChildClass b;
+	b.display();
+
+
+    return 0;
+}
