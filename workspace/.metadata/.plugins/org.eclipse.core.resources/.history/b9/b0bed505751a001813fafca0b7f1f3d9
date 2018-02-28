@@ -1,0 +1,65 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 13, 2018
+ *      Author: shumet
+ *
+ */
+
+#include <iostream>
+#include<iomanip>
+#include <string>
+#include <vector>
+#include <sstream>
+using namespace std;
+
+class Tax{
+private:
+	int numOfTaxBands;
+	vector<double> bandSize;
+	vector<double> percentage;
+	int percentageAboveBands;
+	int numOfFriends;
+	vector<double> income;
+	vector<double> netGift;
+	vector<double> grossGift;
+
+public:
+	Tax();
+	~Tax();
+	void getData();
+	void calculateTax();
+};
+Tax::Tax(){
+	numOfTaxBands =0;
+	percentageAboveBands = 0;
+	numOfFriends = 0;
+}
+Tax::~Tax(){}
+
+void Tax::getData(){
+	double bandSizeInput, percentageInput, incomeInput, netGiftInput;
+	cin>>numOfTaxBands;
+	for(int i = 0; i < numOfTaxBands; i++){
+		cin>>bandSizeInput>>percentageInput;
+		bandSize.push_back(bandSizeInput);
+		percentage.push_back(percentageInput);
+	}
+
+	cin>>percentageAboveBands;
+	cin>>numOfFriends;
+	for(int j = 0; j < numOfFriends; j++){
+		cin>>incomeInput>>netGiftInput;
+		income.push_back(incomeInput);
+		netGift.push_back(percentageInput);
+	}
+}
+
+
+
+int main(void) {
+
+
+
+	return 0;
+}

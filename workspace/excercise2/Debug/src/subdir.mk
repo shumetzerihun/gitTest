@@ -10,7 +10,8 @@ CPP_SRCS += \
 
 O_SRCS += \
 ../src/birthday.o \
-../src/main.o 
+../src/main.o \
+../src/people.o 
 
 OBJS += \
 ./src/birthday.o \

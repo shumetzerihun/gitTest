@@ -1,0 +1,10 @@
+10:16:53 **** Build of configuration Debug for project etestHard_copy ****
+make all 
+Building target: etestHard_copy
+Invoking: GCC C++ Linker
+g++  -o "etestHard_copy"  ./src/main.o   
+Finished building target: etestHard_copy
+ 
+
+10:16:53 Build Finished (took 270ms)
+

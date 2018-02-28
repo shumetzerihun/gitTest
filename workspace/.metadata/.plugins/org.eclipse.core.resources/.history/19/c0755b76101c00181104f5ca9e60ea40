@@ -1,0 +1,22 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 25, 2018
+ *      Author: shumet
+ *
+ */
+
+#include<iostream>
+#include <string>
+using namespace std;
+
+
+int main(void) {
+
+	string test;
+	test.append("abc");
+	cout<<test;
+
+	return 0;
+}
+

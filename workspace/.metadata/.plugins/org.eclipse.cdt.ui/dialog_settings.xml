@@ -11,6 +11,8 @@
 	</section>
 	<section name="org.eclipse.cdt.ui.text.hover.CMacroExpansionExploration">
 	</section>
+	<section name="PDOMSearchPage">
+	</section>
 	<section name="org.eclipse.cdt.internal.ui.preferences.EditTemplateDialog_dialogBounds">
 		<item value="667" key="DIALOG_WIDTH"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>

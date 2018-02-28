@@ -1,0 +1,74 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 13, 2018
+ *      Author: shumet
+ *
+ */
+
+#include <iostream>
+#include<iomanip>
+#include <string>
+#include <vector>
+#include <sstream>
+using namespace std;
+
+class GiftTax{
+private:
+	int numOfTaxBands;
+	vector<double> bandSize;
+	vector<double> percentage;
+	int percentageAboveBands;
+	int numOfFriends;
+	vector<double> income;
+	vector<double> netGift;
+	vector<double> grossGift;
+
+public:
+	GiftTax();
+	~GiftTax();
+	void getData();
+	void calculateTax();
+	double eachFriendsTax();
+};
+GiftTax::GiftTax(){
+	numOfTaxBands =0;
+	percentageAboveBands = 0;
+	numOfFriends = 0;
+}
+GiftTax::~GiftTax(){}
+
+void GiftTax::getData(){
+	double bandSizeInput, percentageInput, incomeInput, netGiftInput;
+	cin>>numOfTaxBands;
+	for(int i = 0; i < numOfTaxBands; i++){
+		cin>>bandSizeInput>>percentageInput;
+		bandSize.push_back(bandSizeInput);
+		percentage.push_back(percentageInput);
+	}
+
+	cin>>percentageAboveBands;
+	cin>>numOfFriends;
+	for(int j = 0; j < numOfFriends; j++){
+		cin>>incomeInput>>netGiftInput;
+		income.push_back(incomeInput);
+		netGift.push_back(percentageInput);
+	}
+}
+void GiftTax::calculateTax(){
+	for(int i = 0; i < numOfFriends; i++){
+		eachFriendsTax();
+	}
+}
+double GiftTax::eachFriendsTax(){
+
+	return 1.0;
+}
+
+int main(void) {
+	GiftTax tax;
+	tax.getData();
+	tax.calculateTax();
+
+	return 0;
+}

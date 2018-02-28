@@ -1,0 +1,47 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 13, 2018
+ *      Author: shumet
+ *		Problem A: test - easy
+ */
+
+#include <iostream>
+#include<iomanip>
+#include <vector>
+using namespace std;
+
+
+class SLMinute{
+private:
+	int numOfObservations;
+	vector<int> minutes;
+	vector<int> seconds;
+public:
+	SLMinute();
+	void getNumOfObservations();
+	void getMinutesAndSeconds();
+	double getSLMinute();
+};
+
+SLMinute::SLMinute(){
+	numOfObservations = 0;
+}
+void SLMinute::getNumOfObservations(){
+	cin>>numOfObservations;
+}
+void SLMinute::getMinutesAndSeconds(){
+	for (int i = 0; i < numOfObservations; i++){
+		for (int j = 0; j < 2; j++)
+			cin>>minutes[i]>>seconds[i];
+	}
+}
+
+int main(void) {
+	SLMinute SLMinuteObj;
+	SLMinuteObj.getNumOfObservations();
+	SLMinuteObj.getMinutesAndSeconds();
+	SLMinuteObj.getSLMinute();
+
+	return 0;
+}

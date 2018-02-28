@@ -1,6 +1,6 @@
-23:47:32 **** Incremental Build of configuration Debug for project excercise5 ****
+10:16:58 **** Incremental Build of configuration Debug for project excercise5 ****
 make all 
-make: Nothing to be done for 'all'.
+Command canceled
 
-23:47:32 Build Finished (took 81ms)
+10:16:58 Build Cancelled (took 149ms)
 

@@ -1,0 +1,41 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 25, 2018
+ *      Author: shumet
+ *
+ */
+
+#include<iostream>
+using namespace std;
+
+class Class1{
+public:
+	static int staticVar;
+	Class1(){
+		++staticVar;
+	}
+	~Class1(){
+		--staticVar;
+		if(!staticVar)
+			cout<<"All objects destroyed"<<endl;
+	}
+
+	void howMany(){
+		cout<<staticVar<<" objects created so far."<<endl;
+	}
+};
+
+int Class1::staticVar = 0;
+
+int main(void) {
+
+	Class1 obj1;
+	Class1 obj2;
+	Class1 obj3;
+
+	obj1.staticVar = 9;
+	obj1.howMany();
+
+	return 0;
+}

@@ -1,0 +1,40 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 13, 2018
+ *      Author: shumet
+ *
+ */
+
+#include <iostream>
+#include<iomanip>
+#include <string>
+#include <vector>
+#include <sstream>
+using namespace std;
+
+class Tax{
+private:
+	int numOfTaxBands;
+	vector<double> bandSize;
+	vector<double> percentage;
+	int percentageAboveBands;
+	int numOfFriends;
+	vector<double> income;
+	vector<double> netGift;
+	vector<double> grossGift;
+
+public:
+	Tax();
+	~Tax();
+	void getData();
+};
+
+
+
+int main(void) {
+
+
+
+	return 0;
+}

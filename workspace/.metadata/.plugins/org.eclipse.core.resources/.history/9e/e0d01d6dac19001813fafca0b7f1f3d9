@@ -1,0 +1,66 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 13, 2018
+ *      Author: shumet
+ *		Problem A: test - easy
+ */
+
+#include <iostream>
+#include <vector>
+#include<iomanip>
+using namespace std;
+
+class SLMinute{
+private:
+	int numOfObservations;
+	double slMinute;
+	int minutesSum;
+	int secondsSum;
+	vector<int> minutes;
+	vector<int> seconds;
+public:
+	SLMinute();
+	~SLMinute();
+	void getNumOfObservations();
+	void getMinutesAndSeconds();
+	void calculateSLMinute();
+};
+
+SLMinute::SLMinute(){
+	numOfObservations = 0;
+	slMinute = 0.0;
+	minutesSum = 0;
+	secondsSum = 0;
+}
+void SLMinute::getNumOfObservations(){
+	cin>>numOfObservations;
+}
+void SLMinute::getMinutesAndSeconds(){
+	int minutesDisplayed, secondsDisplayed;
+	for (int i = 0; i < numOfObservations; i++){
+		cin>>minutesDisplayed>>secondsDisplayed;
+		minutes.push_back(minutesDisplayed);
+		seconds.push_back(secondsDisplayed);
+	}
+}
+void SLMinute::calculateSLMinute(){
+	for (int i = 0; i < numOfObservations; i++){
+		minutesSum += minutes[i];
+		secondsSum += seconds[i];
+	}
+	slMinute = (secondsSum/60.0)/minutesSum;
+	if (slMinute <= 1)
+		cout<<"measurement error";
+	else
+		cout<<fixed<<setprecision(9)<<slMinute;
+}
+
+int main(void) {
+	SLMinute SLMinuteObj;
+	SLMinuteObj.getNumOfObservations();
+	SLMinuteObj.getMinutesAndSeconds();
+	SLMinuteObj.calculateSLMinute();
+
+	return 0;
+}

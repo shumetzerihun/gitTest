@@ -1,0 +1,116 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 17, 2018
+ *      Author: Shumet
+ *		Problem B: test - Medium
+ */
+
+#include <iostream>
+using namespace std;
+
+inline float calculateTax(float taxBands[][2], float income, float netGift, int numberOfBands, float percentageAboveBands){
+	float tax = 0;
+	float taxablePart = 0, taxOnTax = 0;
+	float bandUpperLimit = 0;
+	percentageAboveBands/=100.0;
+	for (int b = 0; b < numberOfBands; b++){
+		float bandSize = taxBands[b][0], percentage = taxBands[b][1]/100;
+		bandUpperLimit += bandSize;
+		if (netGift + income > bandUpperLimit && bandUpperLimit - income >= 0){      //gift doesn't fit tax band
+			tax += (bandUpperLimit - income >= bandSize)? bandSize*percentage : (bandUpperLimit - income)*percentage;
+			if (b == numberOfBands - 1){                   //finish up tax calculation if tax goes beyond all bands
+				taxablePart = (tax + income + netGift) - bandUpperLimit;
+				tax += (taxablePart*percentageAboveBands)/(1 - percentageAboveBands);
+			}
+		}
+		else if ((netGift + income <= bandUpperLimit)){           //gift fits tax band
+			taxablePart = (bandUpperLimit - income >= bandSize) ? (tax + income + netGift) - (bandUpperLimit - bandSize): netGift;
+			taxOnTax = (taxablePart*percentage)/(1 - percentage); //sum in geometric series for the taxable part in the band
+			if ((taxOnTax + taxablePart > bandSize) || ((income - (bandUpperLimit - bandSize) + taxOnTax + taxablePart  > bandSize))){  //tax overlaps onto next band
+				tax += (bandUpperLimit - income >= bandSize) ? bandSize * percentage : (bandUpperLimit - income)*percentage;   //add tax for the current band
+				if (b == numberOfBands - 1){                  //finish up tax calculation if goes beyond all bands
+					taxablePart = (tax + income + netGift) - bandUpperLimit;
+					tax += (taxablePart * percentageAboveBands) / (1 - percentageAboveBands);
+				}
+			}
+			else{
+				tax += taxOnTax;
+				break;
+			}
+		}
+		else if ((b == numberOfBands - 1) && (netGift + income > bandUpperLimit)){    //gift goes beyond all bands
+			taxablePart = netGift;
+			tax += (taxablePart*percentageAboveBands)/(1 - percentageAboveBands);
+
+		}
+	}
+
+
+	return tax;
+}
+
+int main(void) {
+
+	int B;     // number of tax bands
+	int F;     //number of friends
+	float P;    // percentage tax on all income above other bands.
+
+	//cout<<"Enter number of tax bands[1,20]: "<<endl;
+	cin>>B;
+	/*while(B <= 0 || B > 20){
+		cout <<"Input error! Enter integer from the range[1,20]:"<<endl;
+		cin>>B;
+	}*/
+
+	float taxBands[B][2];
+	//cout <<"Enter tax band size(0,1000000] and percentage[0,100], separated by space: "<<endl;
+	for (int b = 0; b < B; b++){
+		for (int i = 0; i < 2; i++){
+			cin>>taxBands[b][i];
+		/*}
+		while (taxBands[b][0] <= 0 || taxBands[b][0] > 1000000 || taxBands[b][1] < 0 || taxBands[b][1] > 100){
+			cout <<"Input error! Enter data again: band size(0,1000000], percentage[0,100]:"<<endl;
+			--b;
+			break;
+		}*/
+	}
+	//cout<<"Enter percentage tax on all income above other bands[0,99.999]: "<<endl;
+	cin>>P;
+	/*while(P < 0 || P > 99.999){
+			cout <<"Input error! Enter real number from the range[0,99.999]:"<<endl;
+			cin>>P;
+		}*/
+
+	//cout<<"Enter number of friends[1, 20]: "<<endl;
+	cin>>F;
+	/*while(F <= 0 || F > 20){
+			cout <<"Input error! Enter integer from the range[1,20]:"<<endl;
+			cin>>F;
+		}*/
+
+	float friends[F][2] = {0};
+
+	//cout<<"Enter each friend's income[0,1000000] and net gift(0,1000000], separated by space: "<<endl;
+	for(int f = 0; f < F; f++){
+		for (int j = 0; j < 2; j++)
+			cin>>friends[f][j];
+		/*while (friends[f][0] < 0 || friends[f][0] > 1000000 || friends[f][1] <= 0 || friends[f][1] > 1000000){
+			cout <<"Input error! Enter data again: income[0,1000000], net gift(0,1000000]: "<<endl;
+			--f;
+			break;
+		}*/
+	}
+
+	cout <<"\nOutput: each friend's gross gift in the same order as input: "<<endl;
+	for (int f = 0; f < F; f++){
+		float income = friends[f][0];
+		float netGift = friends[f][1];
+		float tax = calculateTax(taxBands, income, netGift, B, P);
+		float grossGift = tax + netGift;
+		cout<<grossGift<<endl;
+	}
+
+
+	return 0;
+}

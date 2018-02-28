@@ -1,0 +1,37 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 1, 2018
+ *      Author: shumet
+ *		stack implementation-procedural method
+ */
+
+#include <string>
+#include <iostream>
+using namespace std;
+
+int stack[100];
+int sp = 0;
+
+void push(int value){
+	stack[sp++] = value;
+}
+
+int pop(){
+	return stack[--sp];
+}
+
+int main(void) {
+
+	push(10);
+	push(12);
+	push(14);
+
+	cout<<pop()<<endl;
+	cout<<pop()<<endl;
+	cout<<pop()<<endl;
+
+
+
+	return 0;
+}

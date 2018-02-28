@@ -1,0 +1,51 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 1, 2018
+ *      Author: shumet
+ *		stack implementation-object oriented
+ */
+
+#include <string>
+#include <iostream>
+using namespace std;
+
+class Stack{
+private:
+	int sp;
+	int stackStore[100];
+
+public:
+	Stack(){
+		sp = 0;
+	}
+	~Stack(){}
+
+	void push(int);
+	int pop();
+};
+
+void Stack::push(int value){
+	stackStore[sp++] = value;
+}
+
+int Stack::pop(){
+	return stackStore[--sp];
+}
+
+
+int main(void) {
+
+	Stack stackObj;
+	for (int i = 0; i < 100; i++)
+		stackObj.push(i*2+24);
+	for (int i = 0; i < 100; i++)
+		stackObj.pop()<<" ";
+
+
+
+
+
+
+	return 0;
+}

@@ -1,0 +1,133 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 13, 2018
+ *      Author: shumet
+ *
+ */
+
+#include <iostream>
+#include<iomanip>
+#include <string>
+#include <vector>
+#include <sstream>
+using namespace std;
+
+class GiftTax{
+private:
+	int numOfTaxBands;
+	vector<double> bandSize;
+	vector<double> percentage;
+	double percentageAboveBands;
+	int numOfFriends;
+	vector<double> income;
+	vector<double> netGift;
+	vector<double> grossGift;
+	double taxFriend;
+
+public:
+	GiftTax();
+	~GiftTax();
+	void getData();
+	double calculateTax(int);
+	void calculateGrossGift();
+	bool giftNotFitBand(int, int, double);
+	bool giftFitBand(int, int, double);
+	bool giftBeyondBands(int, int, double);
+	double taxGiftNotFitBand(int, int, double);
+	double taxGiftFitBand(int, int, double);
+	double taxGiftBeyondBands(int, int, double);
+};
+double GiftTax::taxGiftNotFitBand(int friendIndex, int bandIndex, double bandUpperLimit){
+	double thisTax = 0.0;
+	double taxablePart = 0.0;
+	int f = friendIndex, b = bandIndex;
+	thisTax = (bandUpperLimit - income[f] >= bandSize[b])? bandSize[f]*percentage[b] : (bandUpperLimit - income[f])*percentage[b];
+
+	//finish up tax calculation if tax goes beyond all bands
+	if (b == numOfTaxBands - 1){
+		taxablePart = (thisTax + income[f] + netGift[f]) - bandUpperLimit;
+		thisTax = (taxablePart*percentageAboveBands)/(1 - percentageAboveBands);
+	}
+
+	return thisTax;
+}
+double GiftTax::taxGiftFitBand(int friendIndex, int bandIndex, double bandUpperLimit){
+
+	return 1.0;
+}
+double GiftTax::taxGiftBeyondBands(int friendIndex, int bandIndex, double bandUpperLimit){
+
+	return 1.0;
+}
+
+GiftTax::GiftTax(){
+	numOfTaxBands =0;
+	percentageAboveBands = 0.0;
+	numOfFriends = 0;
+	taxFriend = 0.0;
+}
+GiftTax::~GiftTax(){}
+
+void GiftTax::getData(){
+	double bandSizeInput, percentageInput, incomeInput, netGiftInput;
+	cin>>numOfTaxBands;
+	for(int i = 0; i < numOfTaxBands; i++){
+		cin>>bandSizeInput>>percentageInput;
+		bandSize.push_back(bandSizeInput);
+		percentage.push_back(percentageInput);
+	}
+
+	cin>>percentageAboveBands;
+	cin>>numOfFriends;
+	for(int j = 0; j < numOfFriends; j++){
+		cin>>incomeInput>>netGiftInput;
+		income.push_back(incomeInput);
+		netGift.push_back(percentageInput);
+	}
+}
+bool GiftTax::giftNotFitBand(int friendIndex, int bandIndex, double bandUpperLimit){
+	int f = friendIndex, b = bandIndex;
+	return (netGift[f] + income[f] > bandUpperLimit) && (bandUpperLimit - income >= 0) ? true: false;
+}
+bool GiftTax::giftFitBand(int friendIndex, int bandIndex, double bandUpperLimit){
+	int f = friendIndex, b = bandIndex;
+	return (netGift[f] + income[f] <= bandUpperLimit) ? true: false;
+}
+
+bool GiftTax::giftBeyondBands(int friendIndex, int bandIndex, double bandUpperLimit){
+	int f = friendIndex, b = bandIndex;
+	return (b == numOfTaxBands - 1) && (netGift[f] + income[f] > bandUpperLimit) ? true: false;
+}
+
+void GiftTax::calculateGrossGift(){
+	double grossGiftFriend;
+	for(int i = 0; i < numOfFriends; i++){
+		grossGiftFriend = netGift[i] + calculateTax(i);
+		grossGift.push_back(grossGiftFriend);
+	}
+
+}
+double GiftTax::calculateTax(int friendIndex){
+	static double bandUpperLimit = 0.0;
+	for(int b = 0; b < numOfTaxBands; b++){
+		bandUpperLimit += bandSize[b];
+		if (giftNotFitBand(friendIndex, b, bandUpperLimit))
+			taxFriend += taxGiftNotFitBand(friendIndex, b, bandUpperLimit);
+		else if(giftFitBand(friendIndex, b, bandUpperLimit))
+			taxFriend += taxGiftFitBand(friendIndex, b, bandUpperLimit);
+		else if(giftBeyondBands(friendIndex, b, bandUpperLimit))
+			taxFriend += taxGiftBeyondBands(friendIndex, b, bandUpperLimit);
+	}
+
+	return 1.0;
+}
+
+
+int main(void) {
+	GiftTax tax;
+	tax.getData();
+	tax.calculateGrossGift();
+
+	return 0;
+}

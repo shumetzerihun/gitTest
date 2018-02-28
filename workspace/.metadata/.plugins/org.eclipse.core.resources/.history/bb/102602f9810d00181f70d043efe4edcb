@@ -1,0 +1,40 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 1, 2018
+ *      Author: shumet
+ *		data sorting
+ */
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+
+	int auxiliary;
+	bool swapMade;
+	int myArray[20];
+
+
+	for (int i = 0; i < 20; i++)
+		myArray[i] = rand() % 20;
+
+	do{
+		swapMade = false;
+	for (int i = 0; i < 5; i++){
+		if (myArray[i] > myArray[i + 1]){
+			swapMade = true;
+			auxiliary = myArray[i];
+			myArray[i] = myArray[i + 1];
+			myArray[i + 1] = auxiliary;
+		}
+	}
+	}while(swapMade);
+
+	cout <<"Sorted array increasing order: ";
+	for (int i = 0; i < 10; i++){
+		cout<<myArray[i]<<"  ";
+	}
+
+	return 0;
+}

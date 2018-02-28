@@ -1,0 +1,35 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 13, 2018
+ *      Author: shumet
+ *
+ */
+
+#include <iostream>
+#include<iomanip>
+#include <string>
+#include <vector>
+#include <sstream>
+using namespace std;
+
+class Stack{
+private:
+	int sp;
+	int stackStore[100];
+
+public:
+	Stack(){sp = 0;}
+	void push(int);
+	int pop();
+
+};
+
+
+
+int main(void) {
+
+
+
+	return 0;
+}

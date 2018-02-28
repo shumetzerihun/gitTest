@@ -1,0 +1,39 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 25, 2018
+ *      Author: shumet
+ *
+ */
+
+#include<iostream>
+#include<iomanip>
+#include<vector>
+using namespace std;
+
+class Class1{
+public:
+	static int staticVar;
+	Class1(){
+		++staticVar;
+	}
+	~Class1(){
+		--staticVar;
+	}
+
+	void howMany(){
+		cout<<staticVar<<" objects created so far."<<endl;
+	}
+};
+
+static int Class1::staticVar = 0;
+
+int main(void) {
+
+	Class1 obj1;
+	Class1 obj2;
+
+	obj1.howMany();
+
+	return 0;
+}

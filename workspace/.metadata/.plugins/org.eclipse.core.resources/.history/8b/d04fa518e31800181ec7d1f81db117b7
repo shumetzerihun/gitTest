@@ -1,0 +1,28 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 13, 2018
+ *      Author: shumet
+ *		Problem A: test - easy
+ */
+
+#include <iostream>
+#include<iomanip>
+#include <string>
+using namespace std;
+
+
+int main(void) {
+
+	string expression;
+	int x;
+	do{
+		getline(cin, expression);
+	}while(expression.length > 0);
+
+	for (int j= 0; j < 5; j++){
+		cout<<x<<endl;
+	}
+
+	return 0;
+}

@@ -1,0 +1,32 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 13, 2018
+ *      Author: shumet
+ *		Problem A: test - easy
+ */
+
+#include <iostream>
+#include<iomanip>
+#include <string>
+using namespace std;
+
+
+int main(void) {
+
+	string expression;
+	int x;
+	for(int i = 0; i < 5; i++){
+		cin>>x;
+		getchar();
+		if (getchar()){
+			break;
+		}
+	}
+
+	for (int j= 0; j < 5; j++){
+		cout<<x<<endl;
+	}
+
+	return 0;
+}

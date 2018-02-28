@@ -1,6 +1,15 @@
-02:34:58 **** Incremental Build of configuration Debug for project excercise1 ****
+10:16:54 **** Incremental Build of configuration Debug for project excercise1 ****
 make all 
-make: Nothing to be done for 'all'.
+Building file: ../src/project1.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/project1.d" -MT"src/project1.d" -o "src/project1.o" "../src/project1.cpp"
+Finished building: ../src/project1.cpp
+ 
+Building target: excercise1
+Invoking: GCC C++ Linker
+g++  -o "excercise1"  ./src/project1.o ./src/shape.o   
+Finished building target: excercise1
+ 
 
-02:34:58 Build Finished (took 79ms)
+10:16:55 Build Finished (took 782ms)
 

@@ -1,0 +1,67 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 19, 2018
+ *      Author: shumet
+ *		Problem C: test - Hard
+ */
+
+#include <string>
+#include <iostream>
+#include <locale>
+using namespace std;
+
+char stack[2049] = {0};
+int sp = 0;
+
+void push(int value){
+	stack[sp++] = value;
+	//cout<<stack[--sp];
+}
+
+char pop(){
+	return stack[--sp];
+}
+
+int main(void) {
+
+	string expression = {"+13"}; //cout <<expression.size() - 1<<endl;
+	int opNew = 0;
+
+	for (int i = expression.size() - 1; i >= 0; i--){
+		if (isdigit(expression[i])){
+			//cout<<expression[i];
+			push (expression[i]);
+		}
+
+		else{
+			int op1 = pop() - '0'; //cout<<op1<<" ";
+			int op2 = pop() - '0'; //cout<<op2<<" ";
+
+			switch (expression[i]){
+					case '+':
+						opNew = op1 + op2; cout<<opNew<<endl; cout<<char(97)<<endl;
+						push((char)opNew);
+
+						break;
+					case '-':
+						opNew = op1 - op2;
+						push((char)opNew);
+						break;
+					case '*':
+						opNew = op1 * op2;
+						push((char)opNew);
+						break;
+					}
+		}
+	}
+
+	for (int i = 0; i < 3; i++)
+		cout<<pop();
+
+
+
+	return 0;
+
+}
+

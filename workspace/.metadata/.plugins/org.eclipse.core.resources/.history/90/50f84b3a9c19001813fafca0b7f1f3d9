@@ -1,0 +1,42 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 13, 2018
+ *      Author: shumet
+ *		Problem A: test - easy
+ */
+
+#include <iostream>
+#include<iomanip>
+#include <vector>
+using namespace std;
+
+
+class SLMinute{
+private:
+	int numOfObservations;
+	vector<int> minutes;
+	vector<int> seconds;
+public:
+	SLMinute();
+	void getNumOfObservations();
+	void getMinutesAndSeconds();
+	double getSLMinute();
+};
+
+
+int main(void) {
+	SLMinute SLMinuteSize;
+	SLMinuteSize.getNumOfObservations();
+	SLMinuteSize.getMinutesAndSeconds();
+
+	SLMinuteLength = (secondsWaitedSum/60) / minutesDisplayedSum;
+
+	if (SLMinuteLength <= 1)
+		cout<<"measurement error"<<endl;
+	else
+		cout<<setprecision(10)<<SLMinuteLength<<endl;
+
+
+	return 0;
+}

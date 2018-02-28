@@ -1,0 +1,28 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 25, 2018
+ *      Author: shumet
+ *
+ */
+
+#include<iostream>
+using namespace std;
+
+class Test {
+public:
+	int arraySize;
+	Test(int arraySize){
+		this->arraySize = arraySize;
+		Test *testObj = new int[arraySize];
+	}
+};
+
+
+int main(void) {
+	Test *ptrObj = new Test(10);
+
+
+	return 0;
+}
+

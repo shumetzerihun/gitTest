@@ -1,4 +1,4 @@
-21:29:43 **** Incremental Build of configuration Debug for project excercise9-4 ****
+00:14:32 **** Incremental Build of configuration Debug for project excercise9-4 ****
 make all 
 Building file: ../src/main.cpp
 Invoking: GCC C++ Compiler
@@ -11,5 +11,5 @@ g++  -o "excercise9-4"  ./src/main.o
 Finished building target: excercise9-4
  
 
-21:29:44 Build Finished (took 778ms)
+00:14:33 Build Finished (took 622ms)
 

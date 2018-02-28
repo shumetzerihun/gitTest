@@ -1,0 +1,152 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 16, 2018
+ *      Author: shumet
+ *		Problem C: Hard
+ */
+
+#include <string>
+#include <iostream>
+#include <sstream>
+#include <vector>
+using namespace std;
+
+int stack[2048] = {0};
+int sp = 0;
+
+void push(int value){
+	stack[sp++] = value;
+}
+
+int pop(){
+	return stack[--sp];
+}
+
+bool isOperator(string token){
+	return (token == "+" || token == "-" || token == "*") ? true : false;
+}
+
+bool isNegativeOrMultipleDigit(string token){
+	return (token.size() > 1) ? true : false;
+}
+
+bool isSingleDigit(string token){
+	return (token.size() == 1) && isdigit(token[0]) ? true : false;
+}
+
+bool isSingleLowerCase(string token){
+	return (token.size() == 1 && token[0] >= 'a' && token[0] <= 'z') ? true: false;
+}
+
+string evaluatePrefix(string expression){
+	istringstream ss(expression);
+	string token;
+	int operand;
+	int digitCounter = 0;
+	int charPosition[2048] = {0};
+	int charPresence = 0;
+	int charIndex = 0;
+	vector<string> vectorToken;
+
+	while(getline(ss, token, ' ')) {
+		vectorToken.push_back(token);
+	}
+
+	for (int i = vectorToken.size() - 1; i >= 0; i--){
+		if (isSingleDigit(vectorToken[i])){
+			push(vectorToken[i][0] - 48);
+			digitCounter++;
+		}
+		else if (isNegativeOrMultipleDigit(vectorToken[i])){
+			push(stoi(vectorToken[i]));
+			digitCounter++;
+		}
+		else if (isSingleLowerCase(vectorToken[i])){
+			digitCounter = 0;
+			charPresence++;
+			charPosition[charIndex++] = sp;
+			push(int(vectorToken[i][0]));
+		}
+		else if(isOperator(vectorToken[i])){
+			switch (vectorToken[i][0]){
+			case '+':
+				if (digitCounter >= 2){
+					operand = pop() + pop();
+					push(operand);
+					digitCounter--;
+				}
+				else{
+					digitCounter = 0;
+					charPresence++;
+					charPosition[charIndex++] = sp;
+					push(int(vectorToken[i][0]));
+				}
+				break;
+			case '-':
+				if (digitCounter >= 2){
+					operand = pop() - pop();
+					push(operand);
+					digitCounter--;
+				}
+				else{
+					digitCounter = 0;
+					charPresence++;
+					charPosition[charIndex++] = sp;
+					push(int(vectorToken[i][0]));
+				}
+				break;
+			case '*':
+				if (digitCounter >= 2){
+					operand = pop() * pop();
+					push(operand);
+					digitCounter--;
+				}
+				else{
+					digitCounter = 0;
+					charPresence++;
+					charPosition[charIndex++] = sp;
+					push(int(vectorToken[i][0]));
+				}
+				break;
+			}
+		}
+	}
+
+	string expressionSimplified;
+	while(sp){
+		int charFound = 0;
+		for (int i = charPresence - 1; i >= 0 ; i--){
+			if (sp - 1 == charPosition[i]){
+				expressionSimplified.push_back(char(pop()));
+				expressionSimplified.push_back(' ');
+				charFound++;
+				break;
+			}
+		}
+		if (charFound == 0)
+			expressionSimplified.append(to_string(pop()) + ' ');
+	}
+
+	return expressionSimplified;
+}
+
+int main(void) {
+	string expression;
+	vector<string> expressionTestCases;    //vector not necessary. Could have been string expressionTestCases[5];
+	int caseCounter = 0;
+
+	do{
+		getline(cin, expression);
+		expressionTestCases.push_back(expression);
+	}while(expressionTestCases[caseCounter++].length() > 0 && caseCounter < 5);
+
+	caseCounter = 0;
+	while(expressionTestCases[caseCounter].length() > 0){
+		cout<<"Case "<<caseCounter+1<<": ";
+		cout<<evaluatePrefix(expressionTestCases[caseCounter++])<<endl;
+	}
+
+
+	return 0;
+}

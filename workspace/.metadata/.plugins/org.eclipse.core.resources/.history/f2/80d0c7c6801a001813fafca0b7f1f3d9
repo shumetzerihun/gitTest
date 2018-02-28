@@ -1,0 +1,103 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 13, 2018
+ *      Author: shumet
+ *
+ */
+
+#include <iostream>
+#include<iomanip>
+#include <string>
+#include <vector>
+#include <sstream>
+using namespace std;
+
+class GiftTax{
+private:
+	int numOfTaxBands;
+	vector<double> bandSize;
+	vector<double> percentage;
+	double percentageAboveBands;
+	int numOfFriends;
+	vector<double> income;
+	vector<double> netGift;
+	vector<double> grossGift;
+	double taxFriend;
+
+public:
+	GiftTax();
+	~GiftTax();
+	void getData();
+	double calculateTax();
+	void calculateGrossGift();
+	bool giftNotFitBand();
+	bool giftFitBand();
+	bool giftBeyondBands();
+};
+class GiftLocation:public GiftTax{
+private:
+
+public:
+	bool giftNotFitBand();
+	bool giftFitBand();
+	bool giftBeyondBands();
+};
+
+GiftTax::GiftTax(){
+	numOfTaxBands =0;
+	percentageAboveBands = 0.0;
+	numOfFriends = 0;
+	taxFriend = 0.0;
+}
+GiftTax::~GiftTax(){}
+
+void GiftTax::getData(){
+	double bandSizeInput, percentageInput, incomeInput, netGiftInput;
+	cin>>numOfTaxBands;
+	for(int i = 0; i < numOfTaxBands; i++){
+		cin>>bandSizeInput>>percentageInput;
+		bandSize.push_back(bandSizeInput);
+		percentage.push_back(percentageInput);
+	}
+
+	cin>>percentageAboveBands;
+	cin>>numOfFriends;
+	for(int j = 0; j < numOfFriends; j++){
+		cin>>incomeInput>>netGiftInput;
+		income.push_back(incomeInput);
+		netGift.push_back(percentageInput);
+	}
+}
+void GiftTax::calculateGrossGift(){
+	double grossGiftFriend;
+	for(int i = 0; i < numOfFriends; i++){
+		grossGiftFriend = netGift[i] + calculateTax();
+		grossGift.push_back(grossGiftFriend);
+	}
+
+}
+double GiftTax::calculateTax(){
+	for(int b = 0; b < numOfTaxBands; b++){
+		if (GiftLocation::giftNotFitBand()){
+
+		}
+		else if(GiftLocation::giftFitBand()){
+
+		}
+		else if(GiftLocation::giftBeyondBands()){
+
+		}
+	}
+
+	return ;
+}
+
+
+int main(void) {
+	GiftTax tax;
+	tax.getData();
+	tax.calculateGrossGift();
+
+	return 0;
+}

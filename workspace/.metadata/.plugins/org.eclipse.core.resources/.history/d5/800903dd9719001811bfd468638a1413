@@ -1,0 +1,72 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 13, 2018
+ *      Author: shumet
+ *		Problem A: test - easy
+ */
+
+#include <iostream>
+#include<iomanip>
+using namespace std;
+
+
+class SLMinute{
+private:
+	int numOfObservations;
+	int secondsSum;
+	int minutesSum;
+	int *minutesDisplayed[];
+	int *secondswaited[];
+public:
+	SLMinute(){
+		numOfObservations = 0;
+		secondsSum = 0;
+		minutesSum = 0;
+	}
+	int getMinutesSum(){
+		for (int i = 0; i < numOfObservations; i++){
+			cin>>*minutesDisplayed[i];
+			minutesSum += *minutesDisplayed[i];
+		}
+
+		return minutesSum;
+	}
+	int getSecondsSum(){
+		for (int i = 0; i < numOfObservations; i++){
+			cin>>*secondswaited[i];
+			secondsSum += *secondswaited[i];
+		}
+
+		return secondsSum;
+	}
+
+	void setNumOfObservations(int observations){
+		this->numOfObservations = observations;
+	}
+
+};
+
+
+int main(void) {
+	int N; //number of observations
+	double SLMinuteLength;
+	int minutesDisplayedSum;
+	int secondsWaitedSum;
+
+	SLMinute SLMinuteSize;
+	cin>>N;
+	SLMinuteSize.setNumOfObservations(N);
+	minutesDisplayedSum = SLMinuteSize.getMinutesSum();
+	secondsWaitedSum = SLMinuteSize.getSecondsSum();
+
+	SLMinuteLength = (secondsWaitedSum/60) / minutesDisplayedSum;
+
+	if (SLMinuteLength <= 1)
+		cout<<"measurement error"<<endl;
+	else
+		cout<<setprecision(10)<<SLMinuteLength<<endl;
+
+
+	return 0;
+}

@@ -1,0 +1,33 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 13, 2018
+ *      Author: shumet
+ *		Problem A: test - easy
+ */
+
+#include <iostream>
+#include<iomanip>
+#include <string>
+#include <vector>
+#include <sstream>
+using namespace std;
+
+
+int main(void) {
+
+	string expression;
+	vector<string> expCases;
+	int i = 0;
+		do{
+			getline(cin, expression);
+			expCases.push_back(expression);
+		}while(expCases[i++].length() > 0 && i < 5);
+
+	i = 0;
+	while(expCases[i].length() > 0){
+		cout<<expCases[i++]<<endl;
+	}
+
+	return 0;
+}

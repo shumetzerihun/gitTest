@@ -1,0 +1,36 @@
+/*
+ * main.cpp
+ *
+ *  Created on: Feb 1, 2018
+ *      Author: shumet
+ *		stack implementation-object oriented
+ */
+
+#include <string>
+#include <iostream>
+using namespace std;
+
+class Stack{
+private:
+	int sp;
+	int stackStore[100];
+
+public:
+
+
+};
+
+int main(void) {
+
+	push(10);
+	push(12);
+	push(14);
+
+	cout<<pop()<<endl;
+	cout<<pop()<<endl;
+	cout<<pop()<<endl;
+
+
+
+	return 0;
+}
